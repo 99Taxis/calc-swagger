@@ -1,0 +1,1346 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a sample server calculatorstore server.  You can find out\
+    \ more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net,\
+    \ #swagger](http://swagger.io/irc/).      For this sample, you can use the api\
+    \ key `special-key` to test the authorization     filters."
+  version: "1.0.0"
+  title: "Swagger calculator"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "calculator.swagger.io"
+basePath: "/v2"
+schemes:
+- "https"
+- "http"
+paths:
+  /car-economy:
+    get:
+      tags:
+      - "CarEconomy"
+      summary: "get all CarEconomy"
+      description: "return all CarEconomy items"
+      operationId: "getCarEconomy"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CarEconomy"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CarEconomy"
+    post:
+      tags:
+      - "CarEconomy"
+      summary: "Add a new CarEconomy"
+      description: ""
+      operationId: "addPet"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CarEconomy Object added to the database"
+        required: true
+        schema:
+          $ref: "#/definitions/CarEconomy"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "CarEconomy"
+    put:
+      tags:
+      - "CarEconomy"
+      summary: "Update an existing CarEconomy"
+      description: ""
+      operationId: "updatePet"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Pet object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/CarEconomy"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "CarEconomy not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "CarEconomy"
+    delete:
+      tags:
+      - "CarEconomy"
+      summary: "Find CarEconomy by id and delete"
+      description: "delete a CarEconomy item"
+      operationId: "findcalculatorsByTags"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CarEconomy"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "CarEconomy"
+  /car-economy/{id}:
+    get:
+      tags:
+      - "CarEconomy"
+      summary: "Finds CarEconomy by id"
+      description: "get CarEconomy by id"
+      operationId: "findCarEconomyByid"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of CarEconomy to return"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/CarEconomy"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CarEconomy"
+  /car-cost:
+    get:
+      tags:
+      - "CarCost"
+      summary: "get all CarCost"
+      description: "return all CarCost items"
+      operationId: "getCarCost"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CarCost"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CarCost"
+    post:
+      tags:
+      - "CarCost"
+      summary: "Add a new CarCost"
+      description: ""
+      operationId: "addCarCost"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CarCost object that needs to be added in the database"
+        required: true
+        schema:
+          $ref: "#/definitions/CarCost"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "CarCost"
+    put:
+      tags:
+      - "CarCost"
+      summary: "Update an existing CarCost"
+      description: ""
+      operationId: "updateCarCost"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CarCost object that needs to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/CarCost"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "CarCost not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "CarCost"
+    delete:
+      tags:
+      - "CarCost"
+      summary: "Find CarCost by id and delete"
+      description: "delete a CarCost"
+      operationId: "deleteCarCost"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CarEconomy"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "CarCost"
+  /city-params:
+    get:
+      tags:
+      - "CityParams"
+      summary: "get all CityParams"
+      description: "return all CityParams items"
+      operationId: "getCityParams"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParams"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CityParams"
+    post:
+      tags:
+      - "CityParams"
+      summary: "Add a new CityParams"
+      description: ""
+      operationId: "addCityParams"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CityParams object that needs to be added in the database"
+        required: true
+        schema:
+          $ref: "#/definitions/CityParams"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "CityParams"
+    put:
+      tags:
+      - "CityParams"
+      summary: "Update an existing CityParams"
+      description: ""
+      operationId: "updateCityParams"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CityParams object that needs to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/CityParams"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "CityParams not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "CityParams"
+    delete:
+      tags:
+      - "CityParams"
+      summary: "Find CityParams by id and delete"
+      description: "delete a CityParams"
+      operationId: "deleteCityParams"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParams"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "CityParams"
+  /city-params/{id}:
+    get:
+      tags:
+      - "CityParams"
+      summary: "Finds CityParams by id"
+      description: "get CityParams by id"
+      operationId: "findCityParamsByid"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of CityParams to return"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParams"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CityParams"
+  /city-params-pop:
+    get:
+      tags:
+      - "CityParamsPop"
+      summary: "get all CityParamsPop"
+      description: "return all CityParamsPop items"
+      operationId: "getCityParamsPop"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParamsPop"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CityParamsPop"
+    post:
+      tags:
+      - "CityParamsPop"
+      summary: "Add a new CityParamsPop"
+      description: ""
+      operationId: "addCityParamsPop"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CityParamsPop object that needs to be added in the database"
+        required: true
+        schema:
+          $ref: "#/definitions/CityParamsPop"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "CityParamsPop"
+    put:
+      tags:
+      - "CityParamsPop"
+      summary: "Update an existing CityParamsPop"
+      description: ""
+      operationId: "updateCityParamsPop"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CityParamsPop object that needs to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/CityParamsPop"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "CityParamsPop not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "CityParamsPop"
+    delete:
+      tags:
+      - "CityParamsPop"
+      summary: "Find CityParamsPop by id and delete"
+      description: "delete a CityParamsPop"
+      operationId: "deleteCityParamsPop"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParamsPop"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "CityParamsPop"
+  /city-params-pop/{id}:
+    get:
+      tags:
+      - "CityParamsPop"
+      summary: "Finds CityParamsPop by id"
+      description: "get CityParamsPop by id"
+      operationId: "findCityParamsPopByid"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of CityParamsPop to return"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParamsPop"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CityParamsPop"
+  /city-params-uber:
+    get:
+      tags:
+      - "CityParamsUber"
+      summary: "get all CityParamsUber"
+      description: "return all CityParamsUber items"
+      operationId: "getCityParamsUber"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParamsUber"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CityParamsUber"
+    post:
+      tags:
+      - "CityParamsUber"
+      summary: "Add a new CityParamsUber"
+      description: ""
+      operationId: "addCityParamsUber"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CityParamsUber object that needs to be added in the database"
+        required: true
+        schema:
+          $ref: "#/definitions/CityParamsUber"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "CityParamsUber"
+    put:
+      tags:
+      - "CityParamsUber"
+      summary: "Update an existing CityParamsUber"
+      description: ""
+      operationId: "updateCityParamsUber"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CityParamsUber object that needs to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/CityParamsUber"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "CityParamsUber not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "CityParamsUber"
+    delete:
+      tags:
+      - "CityParamsUber"
+      summary: "Find CityParamsUber by id and delete"
+      description: "delete a CityParamsUber"
+      operationId: "deleteCityParamsUber"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParamsUber"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "CityParamsUber"
+  /city-params-uber/{id}:
+    get:
+      tags:
+      - "CityParamsUber"
+      summary: "Finds CityParamsUber by id"
+      description: "get CityParamsUber by id"
+      operationId: "findCityParamsUberByid"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of CityParamsUber to return"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CityParamsUber"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "CityParamsUber"
+  /field-city:
+    get:
+      tags:
+      - "FieldCity"
+      summary: "get all FieldCity"
+      description: "return all FieldCity items"
+      operationId: "getFieldCity"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/FieldCity"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "FieldCity"
+    post:
+      tags:
+      - "FieldCity"
+      summary: "Add a new FieldCity"
+      description: ""
+      operationId: "addFieldCity"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "FieldCity object that needs to be added in the database"
+        required: true
+        schema:
+          $ref: "#/definitions/FieldCity"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "FieldCity"
+    put:
+      tags:
+      - "FieldCity"
+      summary: "Update an existing FieldCity"
+      description: ""
+      operationId: "updateFieldCity"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "FieldCity object that needs to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/FieldCity"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "FieldCity not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "FieldCity"
+    delete:
+      tags:
+      - "FieldCity"
+      summary: "Find FieldCity by id and delete"
+      description: "delete a FieldCity"
+      operationId: "deleteFieldCity"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/FieldCity"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "FieldCity"
+  /field-fuel:
+    get:
+      tags:
+      - "FieldFuel"
+      summary: "get all FieldFuel"
+      description: "return all FieldFuel items"
+      operationId: "getFieldFuel"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/FieldFuel"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "FieldFuel"
+    post:
+      tags:
+      - "FieldFuel"
+      summary: "Add a new FieldFuel"
+      description: ""
+      operationId: "addFieldFuel"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "FieldFuel object that needs to be added in the database"
+        required: true
+        schema:
+          $ref: "#/definitions/FieldFuel"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "FieldFuel"
+    put:
+      tags:
+      - "FieldFuel"
+      summary: "Update an existing FieldFuel"
+      description: ""
+      operationId: "updateFieldFuel"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "FieldFuel object that needs to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/FieldFuel"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "FieldFuel not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "FieldFuel"
+    delete:
+      tags:
+      - "FieldFuel"
+      summary: "Find FieldFuel by id and delete"
+      description: "delete a FieldFuel"
+      operationId: "deleteFieldFuel"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/FieldFuel"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "FieldFuel"
+  /gain:
+    get:
+      tags:
+      - "Gain"
+      summary: "get all Gain"
+      description: "return all Gain items"
+      operationId: "getGain"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Gain"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "Gain"
+    post:
+      tags:
+      - "Gain"
+      summary: "Add a new Gain"
+      description: ""
+      operationId: "addGain"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Gain object that needs to be added in the database"
+        required: true
+        schema:
+          $ref: "#/definitions/Gain"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "Gain"
+    put:
+      tags:
+      - "Gain"
+      summary: "Update an existing Gain"
+      description: ""
+      operationId: "updateGain"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Gain object that needs to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/Gain"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Gain not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "Gain"
+    delete:
+      tags:
+      - "Gain"
+      summary: "Find Gain by id and delete"
+      description: "delete a Gain"
+      operationId: "deleteGain"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Gain"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "Gain"
+  /pop-cost:
+    get:
+      tags:
+      - "POPCost"
+      summary: "get all POPCost"
+      description: "return all POPCost items"
+      operationId: "getPOPCost"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/POPCost"
+        400:
+          description: "Invalid status value"
+      x-swagger-router-controller: "POPCost"
+    post:
+      tags:
+      - "POPCost"
+      summary: "Add a new POPCost"
+      description: ""
+      operationId: "addPOPCost"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "POPCost object that needs to be added in the database"
+        required: true
+        schema:
+          $ref: "#/definitions/POPCost"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "POPCost"
+    put:
+      tags:
+      - "POPCost"
+      summary: "Update an existing POPCost"
+      description: ""
+      operationId: "updatePOPCost"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "POPCost object that needs to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/POPCost"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "POPCost not found"
+        405:
+          description: "Validation exception"
+      x-swagger-router-controller: "POPCost"
+    delete:
+      tags:
+      - "POPCost"
+      summary: "Find POPCost by id and delete"
+      description: "delete a POPCost"
+      operationId: "deletePOPCost"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/POPCost"
+        400:
+          description: "Invalid tag value"
+      x-swagger-router-controller: "POPCost"
+securityDefinitions:
+  calculator_auth:
+    type: "oauth2"
+    authorizationUrl: "http://calculators.swagger.io/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      write:calculators: "modify calculators in your account"
+      read:calculators: "read your calculators"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  CalculatorParams:
+    type: "object"
+    required:
+    - "CRLV"
+    - "DPVAT"
+    - "IPVA"
+    - "carWash"
+    - "cityParams"
+    - "depreciation"
+    - "maintenceCost"
+    - "poupanca"
+    properties:
+      id:
+        type: "integer"
+      maintenceCost:
+        type: "integer"
+        format: "int64"
+      IPVA:
+        type: "integer"
+        format: "int32"
+      depreciation:
+        type: "integer"
+        format: "int32"
+      poupanca:
+        type: "integer"
+        format: "int32"
+      DPVAT:
+        type: "integer"
+        format: "int32"
+      CRLV:
+        type: "integer"
+        format: "int32"
+      carWash:
+        type: "integer"
+        format: "int32"
+      cityParams:
+        type: "integer"
+    xml:
+      name: "CalculatorParams"
+  CarCost:
+    type: "object"
+    required:
+    - "fixedCost"
+    - "fuelCost"
+    - "maintenceCost"
+    - "parkingCost"
+    - "total"
+    - "washCost"
+    properties:
+      id:
+        type: "integer"
+      fixedCost:
+        type: "integer"
+        format: "int64"
+      fuelCost:
+        type: "integer"
+        format: "int32"
+      parkingCost:
+        type: "integer"
+        format: "int32"
+      washCost:
+        type: "integer"
+        format: "int32"
+      maintenceCost:
+        type: "integer"
+        format: "int32"
+      total:
+        type: "integer"
+        format: "int32"
+    example:
+      total: 7
+      washCost: 5
+      fixedCost: 6
+      maintenceCost: 2
+      id: 0
+      parkingCost: 5
+      fuelCost: 1
+    xml:
+      name: "CarCost"
+  CarEconomy:
+    type: "object"
+    required:
+    - "CRLV"
+    - "DPVAT"
+    - "IPVA"
+    - "carWash"
+    - "cityParams"
+    - "depreciation"
+    - "maintenceCost"
+    - "poupanca"
+    properties:
+      id:
+        type: "integer"
+      maintenceCost:
+        type: "integer"
+        format: "int64"
+      IPVA:
+        type: "integer"
+        format: "int32"
+      depreciation:
+        type: "integer"
+        format: "int32"
+      poupanca:
+        type: "integer"
+        format: "int32"
+      DPVAT:
+        type: "integer"
+        format: "int32"
+      CRLV:
+        type: "integer"
+        format: "int32"
+      carWash:
+        type: "integer"
+        format: "int32"
+      cityParams:
+        type: "integer"
+    example:
+      IPVA: 1
+      poupanca: 5
+      cityParams: 3
+      CRLV: 7
+      maintenceCost: 6
+      id: 0
+      carWash: 9
+      depreciation: 5
+      DPVAT: 2
+    xml:
+      name: "CarEconomy"
+  CityParams:
+    type: "object"
+    required:
+    - "baseTax"
+    - "cityId"
+    - "citySpeed"
+    - "cityTax"
+    - "distanceTax"
+    - "dynamicPrice"
+    - "publicTranpPass"
+    - "superKMTax"
+    - "timeTax"
+    - "triggerSuperKM"
+    properties:
+      id:
+        type: "integer"
+      baseTax:
+        type: "integer"
+      distanceTax:
+        type: "integer"
+      timeTax:
+        type: "integer"
+      cityTax:
+        type: "integer"
+      triggerSuperKM:
+        type: "integer"
+      superKMTax:
+        type: "integer"
+      citySpeed:
+        type: "integer"
+      publicTranpPass:
+        type: "integer"
+      dynamicPrice:
+        type: "integer"
+      cityId:
+        type: "string"
+    example:
+      timeTax: 5
+      cityTax: 5
+      triggerSuperKM: 2
+      superKMTax: 7
+      baseTax: 6
+      distanceTax: 1
+      citySpeed: 9
+      id: 0
+      publicTranpPass: 3
+      cityId: "cityId"
+      dynamicPrice: 2
+    xml:
+      name: "CityParams"
+  POPCost:
+    type: "object"
+    required:
+    - "distanceWithIntegratCost"
+    - "distanceWithIntegratMinuteCost"
+    - "distanceWithoutIntegratCost"
+    - "distanceWithoutIntegratMinuteCost"
+    - "total"
+    - "totalCostPublicTransp"
+    - "totalCostYear"
+    - "travelWithIntegratCost"
+    - "travelWithoutIntegratCost"
+    properties:
+      id:
+        type: "integer"
+      distanceWithoutIntegratCost:
+        type: "integer"
+      distanceWithoutIntegratMinuteCost:
+        type: "integer"
+      distanceWithIntegratCost:
+        type: "integer"
+      distanceWithIntegratMinuteCost:
+        type: "integer"
+      travelWithoutIntegratCost:
+        type: "integer"
+      travelWithIntegratCost:
+        type: "integer"
+      totalCostYear:
+        type: "integer"
+      totalCostPublicTransp:
+        type: "integer"
+      total:
+        type: "integer"
+    example:
+      travelWithIntegratCost: 7
+      total: 2
+      distanceWithIntegratMinuteCost: 5
+      totalCostPublicTransp: 3
+      distanceWithoutIntegratMinuteCost: 1
+      distanceWithIntegratCost: 5
+      travelWithoutIntegratCost: 2
+      id: 0
+      totalCostYear: 9
+      distanceWithoutIntegratCost: 6
+    xml:
+      name: "POPCost"
+  CityParamsPop:
+    type: "object"
+    required:
+    - "ASP"
+    - "GNVPrize"
+    - "PAX"
+    - "TPH"
+    - "alcoholPrize"
+    - "cityID"
+    - "gasolinePrize"
+    - "travelDistance"
+    - "travelTime"
+    properties:
+      id:
+        type: "integer"
+      TPH:
+        type: "integer"
+      PAX:
+        type: "integer"
+      travelDistance:
+        type: "integer"
+      travelTime:
+        type: "integer"
+      ASP:
+        type: "integer"
+      GNVPrize:
+        type: "integer"
+      alcoholPrize:
+        type: "integer"
+      gasolinePrize:
+        type: "integer"
+      cityID:
+        type: "string"
+    example:
+      alcoholPrize: 9
+      gasolinePrize: 3
+      travelTime: 5
+      GNVPrize: 7
+      PAX: 1
+      travelDistance: 5
+      id: 0
+      cityID: "cityID"
+      TPH: 6
+      ASP: 2
+    xml:
+      name: "CityParamsPop"
+  CityParamsUber:
+    type: "object"
+    required:
+    - "ASP"
+    - "GNVPrize"
+    - "PAX"
+    - "TPH"
+    - "alcoholPrize"
+    - "cityID"
+    - "gasolinePrize"
+    - "travelDistance"
+    - "travelTime"
+    properties:
+      id:
+        type: "integer"
+      TPH:
+        type: "integer"
+      PAX:
+        type: "integer"
+      travelDistance:
+        type: "integer"
+      travelTime:
+        type: "integer"
+      ASP:
+        type: "integer"
+      GNVPrize:
+        type: "integer"
+      alcoholPrize:
+        type: "integer"
+      gasolinePrize:
+        type: "integer"
+      cityID:
+        type: "string"
+    example:
+      alcoholPrize: 9
+      gasolinePrize: 3
+      travelTime: 5
+      GNVPrize: 7
+      PAX: 1
+      travelDistance: 5
+      id: 0
+      cityID: "cityID"
+      TPH: 6
+      ASP: 2
+    xml:
+      name: "CityParamsUber"
+  Gain:
+    type: "object"
+    required:
+    - "baseTax"
+    - "cityId"
+    - "citySpeed"
+    - "cityTax"
+    - "distanceTax"
+    - "dynamicPrice"
+    - "publicTranpPass"
+    - "superKMTax"
+    - "timeTax"
+    - "triggerSuperKM"
+    properties:
+      id:
+        type: "integer"
+      baseTax:
+        type: "integer"
+      distanceTax:
+        type: "integer"
+      timeTax:
+        type: "integer"
+      cityTax:
+        type: "integer"
+      triggerSuperKM:
+        type: "integer"
+      superKMTax:
+        type: "integer"
+      citySpeed:
+        type: "integer"
+      publicTranpPass:
+        type: "integer"
+      dynamicPrice:
+        type: "integer"
+      cityId:
+        type: "string"
+    example:
+      timeTax: 5
+      cityTax: 5
+      triggerSuperKM: 2
+      superKMTax: 7
+      baseTax: 6
+      distanceTax: 1
+      citySpeed: 9
+      id: 0
+      publicTranpPass: 3
+      cityId: "cityId"
+      dynamicPrice: 2
+    xml:
+      name: "Gain"
+  FieldCity:
+    type: "object"
+    required:
+    - "description"
+    properties:
+      description:
+        type: "string"
+    example:
+      description: "description"
+    xml:
+      name: "FieldCity"
+  FieldFuel:
+    type: "object"
+    required:
+    - "description"
+    properties:
+      description:
+        type: "string"
+    example:
+      description: "description"
+    xml:
+      name: "FieldFuel"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
